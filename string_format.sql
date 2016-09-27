@@ -15,7 +15,7 @@ begin
   loop
   
     v_Posicao := v_Posicao + 1;
-    v_Retorno := replace(v_Retorno, c_Cursor.Identificador, trim(Substr(Regexp_Substr(',' || p_Format, ',[^,]*', 1, v_Posicao), 2)));
+    v_Retorno := replace(v_Retorno, c_Cursor.Identificador, trim(Substr(Regexp_Substr('|' || p_Format, '\|[^\|]*', 1, v_Posicao), 2)));
   
   end loop;
 
